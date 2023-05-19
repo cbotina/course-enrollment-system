@@ -1,10 +1,8 @@
 import sqlite3
-
+from config.database import DbConnection
 
 def create_tables():
-
-    conn = sqlite3.connect('data.db')
-
+    conn = DbConnection().get_connection()
     # Create students table
     conn.execute('''CREATE TABLE IF NOT EXISTS student
                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
