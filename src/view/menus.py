@@ -2,6 +2,14 @@ def print_header(title: str):
     print(f'\n====={title}=====\n')
 
 
+def print_exit_menu():
+    print('''
+
+    0. Salir
+
+    ''')
+
+
 def print_main_menu():
     print('''
     Seleccione una opcion:
