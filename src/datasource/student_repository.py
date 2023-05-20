@@ -20,3 +20,9 @@ def find_all() -> list:
         users.append(user)
 
     return users
+
+
+def update_student(student: Student):
+    conn.execute("UPDATE student SET name = ?, email = ?, password = ?, balance = ? WHERE id = ?",
+                 (student.name, student.email, student.password, student.balance, student.id))
+    conn.commit()

@@ -1,4 +1,4 @@
-from model.models import User
+from model.models import User, Course
 
 
 class SingletonMeta(type):
@@ -17,9 +17,16 @@ class SingletonMeta(type):
 
 class SessionData(metaclass=SingletonMeta):
     user = None
+    course = None
 
-    def get_user(self):
+    def get_user(self) -> User:
         return self.user
 
     def set_user(self, user: User):
         self.user = user
+
+    def get_course(self) -> Course:
+        return self.course
+
+    def set_course(self, course: Course):
+        self.course = course

@@ -1,5 +1,6 @@
 from errors.custom_exceptions import InvalidOptionError
 from view.menus import print_header
+from services.exit_service import ask_exit
 
 options = {
     "SEARCH_COURSES": 1,
@@ -12,6 +13,7 @@ options = {
 def handle_student_menu(option: int):
     if option == options['SEARCH_COURSES']:
         print_header('CURSOS DISPONIBLES')
+        ask_exit()
 
     elif option == options['ENROLL_COURSES']:
         print_header('MATRICULAR CURSO')
@@ -20,7 +22,7 @@ def handle_student_menu(option: int):
         print_header('RECARGAR SALDO')
 
     elif option == options['EXIT']:
-        print('Saliendo del programa...')
+        print('Cerrando Sesion...')
 
     else:
         raise InvalidOptionError

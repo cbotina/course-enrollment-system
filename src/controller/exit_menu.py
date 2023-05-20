@@ -5,7 +5,7 @@ options = {
 }
 
 
-def handle_course_menu(option: int):
+def handle_exit_menu(option: int):
 
     if option == options['EXIT']:
         print('Saliendo...')

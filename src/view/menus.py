@@ -22,7 +22,8 @@ def print_main_menu():
     ''')
 
 
-def print_student_menu():
+def print_student_menu(name: str):
+    print_header(f'BIENVENIDO {name.upper()}')
     print('''
     Seleccione una opcion:
 
@@ -34,7 +35,8 @@ def print_student_menu():
     ''')
 
 
-def print_teacher_menu():
+def print_teacher_menu(name: str):
+    print_header(f'BIENVENIDO {name.upper()}')
     print('''
     Seleccione una opcion:
 
@@ -56,7 +58,8 @@ def print_courses_menu(courses: list):
     print(options+'0. Salir \n')
 
 
-def print_course_menu():
+def print_course_menu(course_name):
+    print_header(f'CURSO {course_name.upper()}')
     print('''
     Seleccione una opcion:
 
@@ -64,4 +67,12 @@ def print_course_menu():
     2. Estudiantes Matriculados
     0. Salir
     
+    ''')
+
+
+def print_exit_menu():
+    print('''
+    
+    0. Salir
+
     ''')

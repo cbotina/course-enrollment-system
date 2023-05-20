@@ -1,11 +1,12 @@
 from model.models import User
 from config.database import DbConnection
-from errors.custom_exceptions import UserNotFoundError
+from errors.custom_exceptions import NotFoundError
 from . import teacher_repository
 from . import student_repository
 
 
 conn = DbConnection().get_connection()
+
 
 def find_one_by_email(email: str) -> User:
     teachers = teacher_repository.find_all()
@@ -13,7 +14,6 @@ def find_one_by_email(email: str) -> User:
     users = teachers+students
     matches = list(filter(lambda u: u.email == email, users))
     if len(matches) == 0:
-        raise UserNotFoundError
+        raise NotFoundError
     else:
         return matches[0]
-

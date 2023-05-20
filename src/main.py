@@ -22,12 +22,12 @@ while option != 0:
         handle_main_menu(option)
 
     except InvalidOptionError:
-        print('\nERROR: La opcion no existe')
+        print(f'\nERROR: La opcion {option} no existe')
 
     except ValueError:
         print('\nERROR: La opcion debe ser un numero')
 
-    except UserNotFoundError:
+    except NotFoundError:
         print('\nERROR: Credenciales incorrectas')
 
     except BadCredentialsError:

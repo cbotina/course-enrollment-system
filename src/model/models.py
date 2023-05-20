@@ -29,9 +29,10 @@ class Student(User):
 
 
 class Course:
-    def __init__(self, id,  name, price):
+    def __init__(self, id,  name, teacher_id, price):
         self.id = id
         self.name = name
+        self.teacher_id = teacher_id
         self.price = price
 
     def __str__(self) -> str:
