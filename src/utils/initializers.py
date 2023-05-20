@@ -1,6 +1,7 @@
 import sqlite3
 from config.database import DbConnection
 
+
 def create_tables():
     conn = DbConnection().get_connection()
     # Create students table
@@ -8,6 +9,7 @@ def create_tables():
                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL,
                     email TEXT NOT NULL,
+                    password TEXT NOT NULL,
                     balance REAL DEFAULT 0);''')
 
     # Create teacher table
@@ -15,6 +17,7 @@ def create_tables():
                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL,
                     email TEXT NOT NULL,
+                    password TEXT NOT NULL,
                     speciality TEXT NOT NULL);''')
 
     # Create course table

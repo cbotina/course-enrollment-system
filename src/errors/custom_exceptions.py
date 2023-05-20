@@ -4,3 +4,7 @@ class UserNotFoundError(Exception):
 
 class InvalidOptionError(Exception):
     pass
+
+
+class BadCredentialsError (Exception):
+    pass

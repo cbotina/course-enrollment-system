@@ -11,6 +11,7 @@ def print_exit_menu():
 
 
 def print_main_menu():
+    print_header('MENU PRINCIPAL')
     print('''
     Seleccione una opcion:
 

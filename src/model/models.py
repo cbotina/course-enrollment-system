@@ -1,9 +1,10 @@
 # User Class
 class User:
-    def __init__(self, id: int, name: str, email: str):
+    def __init__(self, id: int, name: str, email: str, password: str):
         self.id = id
         self.name = name
         self.email = email
+        self.password = password
 
     def __str__(self) -> str:
         return f"ID: {self.id}, Nombre: {self.name}, Correo: {self.email}"
@@ -12,16 +13,16 @@ class User:
 
 
 class Teacher(User):
-    def __init__(self, id: int, name: str, email: str, speciality: str):
-        super().__init__(id, name, email)
+    def __init__(self, id: int, name: str, email: str, password: str, speciality: str):
+        super().__init__(id, name, email, password)
         self.speciality = speciality
 
 # Student Class
 
 
 class Student(User):
-    def __init__(self, id, name, email):
-        super().__init__(id, name, email)
+    def __init__(self, id: int, name: str, email: str, password: str):
+        super().__init__(id, name, email, password)
         self.balance = 0
 
 # Course Class
