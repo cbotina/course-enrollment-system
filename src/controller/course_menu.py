@@ -1,22 +1,27 @@
 from errors.custom_exceptions import InvalidOptionError
 from view.menus import print_header
 from services.exit_service import ask_exit
+from services.reports_service import show_course_details, show_course_students
 
 options = {
     "COURSE_DETAILS": 1,
-    "ENRROLLED_STUDENTS": 2
+    "ENRROLLED_STUDENTS": 2,
+    "EXIT": 0
 }
 
 
 def handle_course_menu(option: int):
 
     if option == options['COURSE_DETAILS']:
-        print_header('DETALLES DEL CURSO')
+        show_course_details()
         ask_exit()
 
     elif option == options['ENRROLLED_STUDENTS']:
-        print_header('ESTUDIANTES MATRICULADOS')
+        show_course_students()
         ask_exit()
+
+    elif option == options['EXIT']:
+        pass
 
     else:
         raise InvalidOptionError

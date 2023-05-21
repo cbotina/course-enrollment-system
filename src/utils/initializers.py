@@ -31,7 +31,7 @@ def create_tables():
     # Create bill table
     conn.execute('''CREATE TABLE IF NOT EXISTS bill
                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    user_id INT NOT NULL,
+                    student_id INT NOT NULL,
                     course_id INT NOT NULL,
-                    FOREIGN KEY (user_id) REFERENCES user(id),
+                    FOREIGN KEY (student_id) REFERENCES student(id),
                     FOREIGN KEY (course_id) REFERENCES course(id));''')

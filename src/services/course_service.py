@@ -5,6 +5,14 @@ from view.menus import print_header, print_course_menu
 from errors.custom_exceptions import InvalidOptionError, NotFoundError
 from utils.utilities import cls
 from controller.course_menu import handle_course_menu
+from datasource.reports import get_courses_details, get_course_details
+
+
+def show_courses():
+    print_header('CURSOS DISPONIBLES')
+    courses = get_courses_details()
+    for course in courses:
+        print(course)
 
 
 def create_course():
@@ -38,21 +46,21 @@ def start_course_menu():
             cls()
             handle_course_menu(option)
 
-        except Exception:
-            print("errorsito")
+        except InvalidOptionError as e:
+            print('opcion invalida')
 
 
 def start_courses_menu():
 
-    print_header('MIS CURSOS')
     option = 1
     teacher_id = SessionData().get_user().id
     courses = course_repository.find_by_teacher_id(int(teacher_id))
     while option != 0:
+        print_header('MIS CURSOS')
         try:
             for course in courses:
                 print(course)
-            print("0. Salir\n")
+            print("\n0. Salir\n")
             option = int(input())
             if option == 0:
                 break

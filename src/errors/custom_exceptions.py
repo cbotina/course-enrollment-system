@@ -8,3 +8,7 @@ class InvalidOptionError(Exception):
 
 class BadCredentialsError (Exception):
     pass
+
+
+class CourseNotFoundError (Exception):
+    pass

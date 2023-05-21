@@ -1,6 +1,6 @@
 from model.models import Course
 from config.database import DbConnection
-from errors.custom_exceptions import NotFoundError
+from errors.custom_exceptions import CourseNotFoundError
 
 conn = DbConnection().get_connection()
 
@@ -41,9 +41,9 @@ def find_one_by_id(course_id: int) -> list:
     cursor.execute(
         f"SELECT id, name, price, teacher_id FROM course WHERE id = {course_id}")
     rows = cursor.fetchall()
+    if len(rows) == 0:
+        raise CourseNotFoundError
     result = rows[0]
-    if len(result) == 0:
-        raise NotFoundError
 
     course = Course(int(result[0]), result[1], result[2], int(result[3]))
 

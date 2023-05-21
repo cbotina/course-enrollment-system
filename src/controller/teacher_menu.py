@@ -14,7 +14,6 @@ options = {
 def handle_teacher_menu(option: int):
     if option == options['CREATE_COURSE']:
         create_course()
-        # Este no va?
         ask_exit()
 
     elif option == options['MY_COURSES']:

@@ -42,7 +42,7 @@ class Course:
 
 
 class Bill:
-    def __init__(self, id, user_id, course_id):
+    def __init__(self, id, student_id, course_id):
         self.id = id
-        self.user_id = user_id
+        self.student_id = student_id
         self.course_id = course_id

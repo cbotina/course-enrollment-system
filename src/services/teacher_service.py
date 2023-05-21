@@ -8,8 +8,11 @@ def start_teacher_menu(name: str):
     option = 1
 
     while option != 0:
-        cls()
-        print_teacher_menu(name)
-        option = int(input())
-        cls()
-        handle_teacher_menu(option)
+        try:
+            cls()
+            print_teacher_menu(name)
+            option = int(input())
+            cls()
+            handle_teacher_menu(option)
+        except Exception:
+            print('error')

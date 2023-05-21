@@ -29,7 +29,6 @@ def print_student_menu(name: str):
 
     1. Ver Cursos
     2. Matricularse a Curso
-    3. Recargar Saldo 
     0. Cerrar Sesion
 
     ''')
