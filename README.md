@@ -21,11 +21,11 @@ The Course Enrollment System provides the following features:
 - User Sign Up and Login: Users can create a new account or log in to an existing account to access the system. Passwords are securely hashed using the hashlib library to protect user data.
 - User Roles: Users can have the role of a student or a teacher.
 - Teacher Functionality:
-- Create Courses: Teachers can create new courses, specifying the associated teacher, course details, and price.
-- View Course Details: Teachers can view details about the courses they have created, including enrolled students.
+  - Create Courses: Teachers can create new courses, specifying the associated teacher, course details, and price.
+  - View Course Details: Teachers can view details about the courses they have created, including enrolled students.
 - Student Functionality:
-- Enroll in Courses: Students can enroll in available courses.
-- View Course Details: Students can view details about the courses they have enrolled in, including the assigned teacher.
+  - Enroll in Courses: Students can enroll in available courses.
+  - View Course Details: Students can view details about the courses they have enrolled in, including the assigned teacher.
 
 ## Software Design Patterns
 
